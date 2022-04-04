@@ -11,18 +11,16 @@ import com.item.secondary.ItemAcqirdOracleRepository;
 
 
 @Component
-public class MyCustomWriter implements ItemWriter<ItemAcqirdOracle> {
+public class ItemManageWriter implements ItemWriter<ItemAcqirdOracle> {
 	
 	@Autowired
-	ItemAcqirdOracleRepository managerRepository ;
+	ItemAcqirdOracleRepository itemAcqirdOracleRepository ;
 	
 	@Override
 	public void write(List<? extends ItemAcqirdOracle> list) throws Exception {
 		for (ItemAcqirdOracle data : list) {
 			System.out.println("MyCustomWriter    : Writing data    : " + data.getSeq()+" : "+data.getName()+" : "+data.getCnt()+" : "+data.getAcqirdDate());
-			managerRepository.save(data);
-			//managerRepository.updtItms(data.getSeq(), data.getName(), data.getCnt(), data.getAcqirdDate());
-			//managerRepository.saveItms(data.getSeq(), data.getName(), data.getCnt());
+			itemAcqirdOracleRepository.save(data);
 		}
 	}
 }

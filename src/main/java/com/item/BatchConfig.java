@@ -24,13 +24,13 @@ public class BatchConfig {
 	public StepBuilderFactory stepBuilderFactory;
 		
 	@Autowired
-	MyCustomReader myCustomReader;
+	ItemManageReader itemManageReader;
 	
 	@Autowired
-	MyCustomWriter myCustomWriter;
-
+	ItemManageProcessor itemManageProcessor;
+	
 	@Autowired
-	MyCustomProcessor myCustomProcessor;
+	ItemManageWriter itemManageWriter;
 	
 	@Bean
 	public Job createJob() {
@@ -43,9 +43,9 @@ public class BatchConfig {
 	public Step createStep() {
 		return stepBuilderFactory.get("MyStep")
 				.<ItemAcqirdMysql, ItemAcqirdOracle> chunk(1)
-				.reader(myCustomReader)
-				.processor(myCustomProcessor)
-				.writer(myCustomWriter)
+				.reader(itemManageReader)
+				.processor(itemManageProcessor)
+				.writer(itemManageWriter)
 				.build();
 	}
 }

@@ -24,7 +24,7 @@ public class SchedulerConfig {
 
 	SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S");
 
-	@Scheduled(fixedDelay = 5000, initialDelay = 5000)
+	@Scheduled(fixedDelay = 10*60*1000, initialDelay = 10*60*1000)
 	public void scheduleByFixedRate() throws Exception {
 		System.out.println("Batch job starting");
 		JobParameters jobParameters = new JobParametersBuilder()

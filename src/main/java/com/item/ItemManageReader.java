@@ -15,25 +15,25 @@ import com.item.primary.ItemAcqirdMysql;
 
 
 @Component
-public class MyCustomReader extends JdbcCursorItemReader<ItemAcqirdMysql> implements ItemReader<ItemAcqirdMysql>{
+public class ItemManageReader extends JdbcCursorItemReader<ItemAcqirdMysql> implements ItemReader<ItemAcqirdMysql>{
 	
-	public MyCustomReader(@Autowired DataSource primaryDataSource) {
+	public ItemManageReader(@Autowired DataSource primaryDataSource) {
 		setDataSource(primaryDataSource);
 		setSql("SELECT itm_seq, itm_nm, itm_cnt, acqird_date FROM item_acqird");
 		setFetchSize(100);
-		setRowMapper(new EmployeeRowMapper());
+		setRowMapper(new ItemAcqirdRowMapper());
 	}
 	
-	public class EmployeeRowMapper implements RowMapper<ItemAcqirdMysql> {
+	public class ItemAcqirdRowMapper implements RowMapper<ItemAcqirdMysql> {
 		@Override
 		public ItemAcqirdMysql mapRow(ResultSet rs, int rowNum) throws SQLException {
-			ItemAcqirdMysql employee  = new ItemAcqirdMysql();
-			employee.setSeq(rs.getInt("itm_seq"));
-			employee.setName(rs.getString("itm_nm"));
-			employee.setCnt(rs.getInt("itm_cnt"));
-			employee.setAcqirdDate(rs.getDate("acqird_date"));
+			ItemAcqirdMysql itemAcqirdMysql  = new ItemAcqirdMysql();
+			itemAcqirdMysql.setSeq(rs.getInt("itm_seq"));
+			itemAcqirdMysql.setName(rs.getString("itm_nm"));
+			itemAcqirdMysql.setCnt(rs.getInt("itm_cnt"));
+			itemAcqirdMysql.setAcqirdDate(rs.getDate("acqird_date"));
 			
-			return employee;
+			return itemAcqirdMysql;
 		}
 	}
 }
