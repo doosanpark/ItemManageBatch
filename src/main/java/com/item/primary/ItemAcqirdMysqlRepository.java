@@ -2,6 +2,6 @@ package com.item.primary;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface EmployeeRepository extends JpaRepository<Employee, Long> {
+public interface ItemAcqirdMysqlRepository extends JpaRepository<ItemAcqirdMysql, Long> {
 
 }

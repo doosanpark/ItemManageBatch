@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ItemManageBatchApplication {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { 	
 		SpringApplication.run(ItemManageBatchApplication.class, args);
 	}
 

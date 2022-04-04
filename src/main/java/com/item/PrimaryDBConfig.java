@@ -25,7 +25,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 )
 public class PrimaryDBConfig {
 	
-	@Bean(name="primaryDataSource")
+	@Bean(name = "primaryDataSource")
 	@Primary
 	@ConfigurationProperties(prefix="spring.datasource")
 	public DataSource primaryDataSource() {

@@ -10,8 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.item.primary.Employee;
-import com.item.secondary.Manager;
+import com.item.primary.ItemAcqirdMysql;
+import com.item.secondary.ItemAcqirdOracle;
 
 
 @Configuration
@@ -42,7 +42,7 @@ public class BatchConfig {
 	@Bean
 	public Step createStep() {
 		return stepBuilderFactory.get("MyStep")
-				.<Employee, Manager> chunk(1)
+				.<ItemAcqirdMysql, ItemAcqirdOracle> chunk(1)
 				.reader(myCustomReader)
 				.processor(myCustomProcessor)
 				.writer(myCustomWriter)

@@ -1,16 +1,20 @@
 package com.item.secondary;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="item_acqird")
-public class Manager {
+public class ItemAcqirdOracle {
 	@Id
 	private int itm_seq;
 	private String itm_nm;
 	private int itm_cnt;
+	private Date acqird_date;
+	
 	public int getSeq() {
 		return itm_seq;
 	}
@@ -28,5 +32,11 @@ public class Manager {
 	}
 	public void setCnt(int itm_cnt) {
 		this.itm_cnt = itm_cnt;
+	}	
+	public Date getAcqirdDate() {
+		return acqird_date;
+	}
+	public void setAcqirdDate(Date acqird_date) {
+		this.acqird_date = acqird_date;
 	}	
 }
