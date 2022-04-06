@@ -1,7 +1,5 @@
 package com.item.primary;
 
-import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,7 +14,7 @@ public class ItemAcqirdMysql {
 	private int itm_seq;
 	private String itm_nm;
 	private int itm_cnt;
-	private Date acqird_date;
+	private String acqird_date;
 	public int getSeq() {
 		return itm_seq;
 	}
@@ -35,10 +33,10 @@ public class ItemAcqirdMysql {
 	public void setCnt(int itm_cnt) {
 		this.itm_cnt = itm_cnt;
 	}	
-	public Date getAcqirdDate() {
+	public String getAcqirdDate() {
 		return acqird_date;
 	}
-	public void setAcqirdDate(Date acqird_date) {
+	public void setAcqirdDate(String acqird_date) {
 		this.acqird_date = acqird_date;
 	}	
 }

@@ -31,7 +31,7 @@ public class ItemManageReader extends JdbcCursorItemReader<ItemAcqirdMysql> impl
 			itemAcqirdMysql.setSeq(rs.getInt("itm_seq"));
 			itemAcqirdMysql.setName(rs.getString("itm_nm"));
 			itemAcqirdMysql.setCnt(rs.getInt("itm_cnt"));
-			itemAcqirdMysql.setAcqirdDate(rs.getDate("acqird_date"));
+			itemAcqirdMysql.setAcqirdDate(rs.getString("acqird_date"));
 			
 			return itemAcqirdMysql;
 		}
